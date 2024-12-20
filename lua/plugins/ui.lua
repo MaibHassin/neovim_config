@@ -1,4 +1,14 @@
 return {
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+    -- Catppuccin coloscheme
+    {
+        "catppucinn/nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("catppuccin").setup({
+                flavour = "mocha"
+            })
+            vim.cmd([[colorscheme catppuccin]])
+        end,
+    },
 }
